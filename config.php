@@ -1,6 +1,6 @@
 <?php
 $DBType = "mysql";
-$DBHost = "localhost";
+$DBHost = "mysql";
 $DBLogin = "root";
 $DBPassword = "";
 $DBName = "intensa_back";
