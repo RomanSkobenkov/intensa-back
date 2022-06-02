@@ -1,5 +1,6 @@
 <?php
 
+namespace app;
 
 class ShortUrl
 {
@@ -15,7 +16,7 @@ class ShortUrl
         $pdo = new DB();
         $req = $pdo->prepare("SELECT * FROM `short_urls` WHERE `short_url` = :short_url");
         $req->execute(array('short_url' => $shortUrl));
-        $res = $req->fetch(PDO::FETCH_ASSOC);
+        $res = $req->fetch(\PDO::FETCH_ASSOC);
 
         if (!$res) { // если такой короткой ссылки нет, то забираем её и выходим из цикла
             $ins = $pdo->prepare("INSERT INTO `short_urls` SET `long_url` = :long_url, `short_url` = :short_url");

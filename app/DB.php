@@ -1,5 +1,6 @@
 <?php
 
+namespace app;
 
 class DB
 {
@@ -22,12 +23,12 @@ class DB
     {
         if (self::$instance === null) {
             try {
-                self::$db = new PDO(
+                self::$db = new \PDO(
                     Config::DB_TYPE . ':dbname=' . Config::DB_NAME . ';host=' . Config::DB_HOST . '',
                     Config::DB_LOGIN,
                     Config::DB_PASSWORD
                 );
-            } catch (PDOException $e) {
+            } catch (\PDOException $e) {
                 die($e->getMessage());
             }
         }

@@ -1,5 +1,6 @@
 <?php
 
+namespace app;
 
 class Redirect
 {
@@ -15,8 +16,8 @@ class Redirect
         if (iconv_strlen($shortUrl)) {
             $pdo = new DB();
             $req = $pdo->prepare("SELECT * FROM `short_urls` WHERE `short_url` = :short_url");
-            $req->execute(array('short_url' => $short_url));
-            $res = $req->fetch(PDO::FETCH_ASSOC);
+            $req->execute(['short_url' => $shortUrl]);
+            $res = $req->fetch(\PDO::FETCH_ASSOC);
 
             try {
                 if ($res) {
