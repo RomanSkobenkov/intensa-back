@@ -1,5 +1,6 @@
 <?php
-include 'dbcon.php';
+include 'DB.php';
+include 'Config.php';
 include 'ShortUrl.php';
 include 'Redirect.php';
 

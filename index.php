@@ -11,9 +11,8 @@ include 'request.php';
     <title>Intensa Back</title>
 </head>
 <body>
-
 <form action="" method="POST">
-    <input type="text" name="url" value="<?=$final_url?>" >
+    <input type="text" name="url" value="<?= $final_url->shortUrl ?>">
     <button type="submit">Сократить</button>
 </form>
 
